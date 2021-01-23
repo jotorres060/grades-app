@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreGradeRequest;
 use App\Models\Grade;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class GradeController extends Controller

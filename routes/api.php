@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/grades', [\App\Http\Controllers\Api\GradeController::class, "index"]);
+
+Route::post('/grades/create', [\App\Http\Controllers\Api\GradeController::class, "store"]);
+
+Route::put('/grades/edit/{id}', [\App\Http\Controllers\Api\GradeController::class, "update"]);
+
+Route::delete('/grades/delete/{id}', [\App\Http\Controllers\Api\GradeController::class, "destroy"]);
